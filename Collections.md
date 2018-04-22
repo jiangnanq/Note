@@ -10,7 +10,7 @@
 
 2. Check item exist in array
   ```Swift
-    var b:[String] = ["a", "b", "c", "d", "e"]****
+    var b:[String] = ["a", "b", "c", "d", "e"]
     b.contains("a")
   ```
 

@@ -24,8 +24,12 @@ workon my_project
 deactivate
 lsvirtualenv
 rmvirtualenv
+
+$ export WORKON_HOME=~/Envs
+$ source /usr/local/bin/virtualenvwrapper.sh
+$ deactivate
 ```
-[Details](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
+[Reference](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
 
 - Read file with Chinese
 ```Python
