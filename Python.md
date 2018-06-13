@@ -1,7 +1,11 @@
-# Notes for Python Language 
+---
+title: Python
+date: 2018-2-1
+tags: Python
+---
 
 - Python virtual enviroment
-```
+```bash
 $ pip install virtual
 $ cd my_project_folder
 $ virtualenv my_project
@@ -11,14 +15,14 @@ $ deactivate
 ```
 
 - To activate virtualenv
-```
+```bash
 $ pip install virtualenvwrapper
 $ export WORKON_HOME=~/Envs
 $ source /usr/local/bin/virtualenvwrapper.sh
 ```
 
 - Useful command
-```
+```bash
 mkvirtualenv my_project
 workon my_project
 deactivate

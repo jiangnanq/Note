@@ -1,7 +1,8 @@
-# Cloudkit 
-
-Swift version: 3.0
-Xcode version: 8.3
+---
+title: iOS Cloudkit Usage in Swift
+date: 2017-4-8
+tags: iOS
+---
 
 1. **To query a record by distance**
 ```Swift

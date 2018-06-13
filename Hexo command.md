@@ -1,13 +1,16 @@
-# Hexo command list
+---
+title: Hexo Command list
+date: 2017-3-30
+tags: Hexo
+---
 
 1. Test blog locally
-	```
-	$hexo s
-	{% endcodeblock %}
-	```
+```bash
+$hexo s
+```
 2. Publish blog
-	```
-	$hexo clean && hexo g && hexo d
-	```
+```bash
+$hexo clean && hexo g && hexo d
+```
 
 [Reference](http://www.jianshu.com/p/4eaddcbe4d12)
