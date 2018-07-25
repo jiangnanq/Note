@@ -1,11 +1,8 @@
----
-title: Summary of UITableViewController 
-date: 2017-3-20
-tags: iOS
----
+##UITableview 
 
-Basic usage
-```Swift
+* Basic usage
+
+```swift
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       return messages.count
@@ -23,16 +20,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 }
 ```
 
-1. Select cell and send data to next viewcontroller
-```Swift
+* Select cell and send data to next viewcontroller
+
+```swift
 let vc = self.storyboard?.instantiateViewControllerWithIdentifier("studentDetailViewController") as? studentDetailViewController
 vc?.newStudent = false
 vc?.currentStudent = DataManager.copyStudent(Students[indexPath.row])
 self.navigationController?.pushViewController(vc!, animated: true)  
 ```
 
-1. Select cell and prepare to segue
-```Swift
+* Select cell and prepare to segue
+
+```swift
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier == "showdetail" {
           let vc = segue.destination as! detailViewController
@@ -41,13 +40,15 @@ self.navigationController?.pushViewController(vc!, animated: true)
   } 
 ```
 
-1. Use custom cell in tableview controller
-```Swift
+* Use custom cell in tableview controller
+
+```swift
 let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! checkListCollectionViewCell
 ```
 
-1. Delete row from tableview controller. Update UIView in other queue. Update tableview by use tableview.deleteRowAtIndexpath
-```Swift
+* Delete row from tableview controller. Update UIView in other queue. Update tableview by use tableview.deleteRowAtIndexpath
+
+```swift
 extension savedSongViewController:UITableViewDelegate {
   func tableView(savedSongTable: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
       return true
@@ -69,11 +70,12 @@ extension savedSongViewController:UITableViewDelegate {
 }
 ```
 
-1. Detect button/image was tapped in a cell (use protocol)
+* Detect button/image was tapped in a cell (use protocol)
   [Link](http://candycode.io/how-to-properly-do-buttons-in-table-view-cells/)
 
-1. Click a cell and popup alertcontroller
-```Swift
+* Click a cell and popup alertcontroller
+
+```swift
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
       let i = indexPath.row
       print ("\(i)")
@@ -94,18 +96,20 @@ extension savedSongViewController:UITableViewDelegate {
   }
 ```
 
-1. UITableView cell auto height
-  - Add constrains in the cell's view
-  - Add below code in the viewcontroller 
-  ```Swift
-    self.tableView.rowHeight = UITableViewAutomaticDimension
-    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 140
-    }
-  ```
+* UITableView cell auto height
+    1. Add constrains in the cell's view
+    2. Add below code in the viewcontroller 
 
-1. Reload one cell in the tableview
-  ```Swift
-    let ip = NSIndexPath(row: row, section: 0)
-    self.tableView.reloadRows(at: [ip as IndexPath], with: .top)
-  ```
+```swift
+  self.tableView.rowHeight = UITableViewAutomaticDimension
+  override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+  return 140
+}
+```
+
+* Reload one cell in the tableview
+
+```swift
+  let ip = NSIndexPath(row: row, section: 0)
+  self.tableView.reloadRows(at: [ip as IndexPath], with: .top)
+```

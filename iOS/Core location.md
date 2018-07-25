@@ -1,12 +1,7 @@
----
-title: iOS Core Location in Swift
-date: 2018-3-5
-tags: iOS
----
-
 
 1. To show map in mapview
-```Swift
+
+```swift
 let initlocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 1.34549354899945, longitude: 103.83823575360742)
 let regionradius:CLLocationDistance = 30000
 let region = MKCoordinateRegionMakeWithDistance(initlocation, regionradius, regionradius)
@@ -14,7 +9,8 @@ singaporeMap.setRegion(region, animated: true)
 ```
 
 1. Init location manager
-```Swift
+
+```swift
 func initloactionManger() {
     locationmanager.delegate = self
     if CLLocationManager.locationServicesEnabled() {

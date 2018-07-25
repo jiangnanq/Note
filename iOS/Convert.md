@@ -1,19 +1,17 @@
----
-title: All about convert 
-date: 2017-4-30
-tags: iOS
----
+# Convert
 
 1. Convert Date to String
-```Swift
+
+```swift
 var msg = ""
 let dateformatter = DateFormatter()
 dateformatter.dateFormat = "HH:mm:ss"
 msg = msg + dateformatter.string(from: timestamp) 
 ```
 
-1. Convert time difference to String
-```Swift
+2. Convert time difference to String
+
+```swift
 let ct = Date()
 var ts = ""
 var ms = ""

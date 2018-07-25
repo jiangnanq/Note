@@ -1,11 +1,7 @@
----
-title: iOS Cloudkit Usage in Swift
-date: 2017-4-8
-tags: iOS
----
 
-1. **To query a record by distance**
-```Swift
+1. To query a record by distance
+
+```swift
     var nearbyTrolleys:[trolley]=[]
     let distance = 3000.0
     let locationPredicate = NSPredicate(format: "distanceToLocation:fromLocation:(%K, %@) < %f", "location", currentlocation, distance)
@@ -33,8 +29,9 @@ tags: iOS
     publicdatabase.add(operation)
 ```
 
-2. **Save image to local file**
-```Swift
+2. Save image to local file
+
+```swift
     func saveImageLocally() {
         let imageData: Data = UIImageJPEGRepresentation(noteImage.image!, 0.8)!
         let imageDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
@@ -43,4 +40,16 @@ tags: iOS
         imageURL = URL(fileURLWithPath: path)
         try? imageData.write(to: imageURL, options: [.atomic])
     }
+```
+
+3. Add annotation on the map 
+
+```swift
+    class BusStop: NSObject, MKAnnotation  {
+        var number, name, namechn, road, area: String
+        
+        var coordinate: CLLocationCoordinate2D 
+    }
+
+
 ```

@@ -1,38 +1,24 @@
----
-title: Summary of Swift 1
-date: 2017-3-19
-tags: iOS
----
+# Swift summary 1
 
-1. [UIButton](#UIButton usage): To add action to UIButton
-2. [Singleton class](#Singleton): How to create and use Singleton class
-3. [Navigation bar](#Navigationbar): Navigation bar usage
-4. [Alert Controller](#Alertcontroller): Alertcontroller usage
-5. [Rate Apps in Appstore](#rateapp): Rate App in Appstore
-6. [Select photo from album](#selectphoto): Select photo from album
-7. [Background dispatch](#dispatch): Background dispatch queues
-8. [Notification](#notification): Notification
-9. [PushViewController](#pushviewcontroller): Push viewController
-10. [PresentViewController](#presentviewcontroller): Present viewController
-11. [RunTaskbyTimer](#timerTask): To start a timer task
-12. [Check item in Array](#checkiteminarray): To check an item exist in Array
-
-
-1. <a name="UIButton usage"></a> UIButton
+1. UIButton
   * Add target to UIButton.
-```Swift
+
+```swift
 button.addTarget(self, action: #selector(MyClass.buttonTapped),
                 forControlEvents: .TouchUpInside)
 ```
-* Add bar button and its action.
-```Swift
+
+  * Add bar button and its action.
+
+```swift
 let barbutton = UIBarButtonItem(title: "save", style: UIBarButtonItemStyle.Plain, 
     target: self, action: #selector(saveAlbum))
 self.navigationItem.rightBarButtonItem = barbutton
 ```
 
-2. <a name="Singleton"></a> **Singleton class usage**
-```Swift
+2. Singleton class usage
+
+```swift
 class currentUserInfo {
     static let sharedCurrentUserInstance = currentUserInfo()
     var userRealName = ""
@@ -41,16 +27,18 @@ class currentUserInfo {
 let a = currentUserInfo.sharedCurrentUserInstance.userRealName
 ```
 
-3. <a name="Navigationbar"></a> **Navigation bar usage**
-  * Add bar button and its action
-```Swift
+3. Navigation bar usage
+  Add bar button and its action
+
+```swift
 let barbutton = UIBarButtonItem(title: "save", style: UIBarButtonItemStyle.Plain, 
 target: self, action: #selector(saveAlbum))
 self.navigationItem.rightBarButtonItem = barbutton
 ```
 
-4. <a name="Alertcontroller"></a> **Alert controller usage**
-```Swift
+4. Alert controller usage
+
+```swift
 func reportSpamMail() {
     let alertController = UIAlertController(title: "Report", message: "Report spam number", preferredStyle: .alert)
     
@@ -74,9 +62,10 @@ func reportSpamMail() {
 }
 ```
 
-5. <a name="rateapp"></a> Rate app 
+5.  Rate app 
 To rate the apps in the Appstore
-```Swift
+
+```swift
 func rateApp(appId:String, completion: @escaping ((_ success: Bool) ->())) {
     guard let url = URL(string: "itms-apps://itunes.apple.com/app/" + appId) else {
         completion(false)
@@ -89,8 +78,9 @@ func rateApp(appId:String, completion: @escaping ((_ success: Bool) ->())) {
     UIApplication.shared.open(url, options: [:], completionHandler: completion)
 }
 ```
-6. <a name="selectphoto"></a> **Select photo from libary**
-```Swift
+6. Select photo from libary
+
+```swift
 func addPhoto() {
     imagePicker.allowsEditing = false
     imagePicker.sourceType = .PhotoLibrary
@@ -110,14 +100,16 @@ extension addPhotoViewController:UIImagePickerControllerDelegate,UINavigationCon
     }
 }
 ```
-7. <a name="dispatch"></a> **Background dispatch queues**
-```Swift
+7. Background dispatch queues
+
+```swift
   DispatchQueue.global().async {
           print (message)
   }
 ```
-8. <a name="notification"></a> **Notification**
-```Swift
+8. Notification
+
+```swift
   // Define identifier
 let notificationName = Notification.Name("NotificationIdentifier")
 
@@ -132,16 +124,18 @@ NotificationCenter.default.post(name: notificationName, object: nil)
 // Stop listening notification
 NotificationCenter.default.removeObserver(self, name: notificationName, object: nil);
 ```
-9. <a name="pushviewcontroller"></a> **Push viewController**
-```Swift
+9. Push viewController
+
+```swift
 let storyboard = UIStoryboard(name: "ContentDelivery", bundle: nil)
 let webViewController = storyboard.instantiateViewControllerWithIdentifier("ContentDeliveryWebViewController") as! ContentDeliveryWebViewController
 webViewController.url = url
 webViewController.title = content.key
 self.navigationController?.pushViewController(webViewController, animated: true)
 ```
-10. <a name="presentviewcontroller"></a> **Present viewController**
-```Swift
+10. Present viewController
+
+```swift
 func toNextViewController() {
   let storyboard = UIStoryboard(name: "Main", bundle: nil)
   var nextVc:UIViewController
@@ -153,8 +147,9 @@ func toNextViewController() {
   self.window?.rootViewController = nextVc
 }
 ```
-11. <a name="timerTask"></a> **To start a timer task**
-```Swift
+11. To start a timer task
+
+```swift
   var timer = Timer()
   self.timer = Timer.scheduledTimer(timeInterval: 5.0,
                               target: self,
@@ -165,8 +160,9 @@ func toNextViewController() {
 
   }
 ```
-12. <a name="checkiteminarray"></a> ** To check an item exist in Array**
-```Swift
+12. To check an item exist in Array
+
+```swift
 if Array(sensorsid.keys).contains(messageid){
               processSensorMessage(json: json, index: messageid)
 }

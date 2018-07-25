@@ -1,11 +1,8 @@
----
-title: Summary of file operation
-date: 2017-8-22
-tags: iOS
----
+# File operation
 
 1. Save array to file
-```Swift
+
+```swift
 @IBAction func saveToFile(_ sender: Any) {
     let filepath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
     let dateformatter = DateFormatter()
@@ -23,7 +20,8 @@ tags: iOS
 ```
 
 2. Read json data from file
-```Swift
+
+```swift
 func readSensorDataFile(){
     let filepath = Bundle.main.path(forResource: "sensor", ofType: "json")
     var data:Data?
