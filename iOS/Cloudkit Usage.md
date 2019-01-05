@@ -1,3 +1,4 @@
+## Cloudkit usage
 
 1. To query a record by distance
 
@@ -29,7 +30,7 @@
     publicdatabase.add(operation)
 ```
 
-2. Save image to local file
+1. Save image to local file
 
 ```swift
     func saveImageLocally() {
@@ -42,14 +43,16 @@
     }
 ```
 
-3. Add annotation on the map 
+1. Simple example on how to use NSPredicate
+
+Query record from Realm database.
 
 ```swift
-    class BusStop: NSObject, MKAnnotation  {
-        var number, name, namechn, road, area: String
-        
-        var coordinate: CLLocationCoordinate2D 
-    }
-
-
+    let dateformatter = DateFormatter()
+    let dtstring = "2017-06-08 19:00:00"
+    dateformatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
+    let dt:Date = dateformatter.date(from:dtstring)!
+    let ht = "heartbeat"
+    let predicate = NSPredicate(format: "timestamp >= %@ AND status != %@", dt as CVarArg, ht as CVarArg)
+    let queryrecord = realm.objects(record.self).filter(predicate)
 ```

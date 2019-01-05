@@ -1,4 +1,4 @@
-# Summary of Swift time operation
+## Summary of Swift time operation
 
 1. Trim alphabet from string
 

@@ -1,3 +1,4 @@
+# About core location
 
 1. To show map in mapview
 
@@ -8,7 +9,7 @@ let region = MKCoordinateRegionMakeWithDistance(initlocation, regionradius, regi
 singaporeMap.setRegion(region, animated: true)
 ```
 
-1. Init location manager
+2. Init location manager
 
 ```swift
 func initloactionManger() {
@@ -28,4 +29,14 @@ func initloactionManger() {
         }
     }
 }
+```
+3. Add annotation on the map 
+
+```swift
+class busstop: nsobject, mkannotation  {
+    var number, name, namechn, road, area: string
+    var coordinate: cllocationcoordinate2d 
+}
+
+mapView.addAnnotations(allbusstops)
 ```

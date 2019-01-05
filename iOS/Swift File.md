@@ -1,4 +1,4 @@
-# File operation
+## File operation
 
 1. Save array to file
 
@@ -20,6 +20,8 @@
 ```
 
 2. Read json data from file
+
+Use SwiftJSON to read json file in the bundle
 
 ```swift
 func readSensorDataFile(){
