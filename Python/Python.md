@@ -30,10 +30,10 @@
     [Reference](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
 
 - Read file with Chinese
-    ```Python
+    ```python
     import codecs
     with codecs.open('areachn.json', 'r', 'utf-8') as fp:
-	a = json.load(fp)
+        a = json.load(fp)
     ```
 - Filter list
     ```python
@@ -55,8 +55,8 @@
     import operator
     x = {1:2, 3:4, 4:3, 1:0}
     sorted_x = operator(x.items(), key=operator.itemgetter(1))
-#  Filter dict by value
-   sorted_dict = {k: v for k, v in areadata.items() if v > 0}
+    Filter dict by value
+       sorted_dict = {k: v for k, v in areadata.items() if v > 0}
     ```
 - Reduce
 ```python

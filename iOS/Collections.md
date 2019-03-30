@@ -44,3 +44,8 @@ if Array(sensorsid.keys).contains(messageid){
 }
 
 ```
+8. To find the index of element
+```swift
+let arr = ["a", "b", "c"]
+let indexofA = arr.firstIndex("a")
+```

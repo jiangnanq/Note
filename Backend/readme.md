@@ -58,3 +58,13 @@
     [Reference 1] (https://certbot.eff.org/lets-encrypt/debianjessie-apache)
 
     [Reference 2] (https://hackernoon.com/how-to-set-up-https-for-your-domain-on-aws-8f771686603d)
+
+* Check apache status
+    ```
+    sudo systemctl status apache2
+    ```
+
+* View logs
+    ```
+    tail -10 /var/log/apache2/access.log
+    ```
