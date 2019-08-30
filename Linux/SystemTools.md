@@ -1,7 +1,5 @@
 ---
-title: Development enviroment setup
-date: 01-Jun-2018
-tags: Linux 
+
 ---
 
 Development enviroment setup

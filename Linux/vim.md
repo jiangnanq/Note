@@ -19,4 +19,7 @@ Vim function summary
     3. :syntax on syntax is on
 
 [Reference](https://github.com/skywind3000/awesome-cheatsheets/blob/master/editors/vim.txt)
-	
+
+*  To change the json file format: %!python -m json.tool
+
+  

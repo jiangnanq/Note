@@ -1,4 +1,19 @@
-## SQL COMMAND
+## MySQL usage
+
+* Connect to databse
+```
+sudo mysql -u root -p
+```
+
+* List all tables
+```
+.table
+```
+
+* Describe table
+```
+.schema tablename
+```
 
 * Add table
 ```
@@ -19,12 +34,3 @@ DROP COLUMN ts;
 ```
 SELECT * FROM bedrecord WHERE extract(hour from ts) = 17;
 ```
-
-* Join query
-
-```
-SELECT s.number, s.name, l.busstop
-FROM busstop s JOIN busline l ON s.number=l.busstop
-WHERE s.number='22009'
-```
-
