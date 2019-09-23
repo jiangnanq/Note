@@ -17,12 +17,12 @@ tags: Git
     git reset 56e05fced 
     ```
   * Moves pointer back to previous HEAD
-    ```
+    ```bash
     git reset --soft HEAD@{1}
     git commit -m "Revert to 56e05fced"
     ```
   * Updates working copy to reflect the new commit
-    ```
+    ```bash
     git reset --hard
     ```
 
